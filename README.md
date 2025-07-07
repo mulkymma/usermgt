@@ -1,19 +1,20 @@
 # Django User Management System
 
-This project is a Django-based user management system that provides custom user registration, email verification, and profile management. It is designed for easy extension and integration into larger Django projects.
+A Django-based user management system featuring custom user registration, email verification, and profile management. Designed for easy extension and integration into larger Django projects.
 
 ---
 
 ## Technologies Used
 
-- **Python 3.x**: The core programming language.
-- **Django**: The main web framework for rapid development and clean, pragmatic design.
-- **SQLite**: Default database for development (via `db.sqlite3`).
-- **Django Admin**: For managing users and other models.
-- **Django Custom User Model**: Allows for flexible user attributes and authentication.
+- **Python 3.x**: Core programming language for backend logic.
+- **Django**: Web framework for rapid development and clean design.
+- **SQLite**: Default lightweight database for development.
+- **Django Admin**: Built-in admin interface for managing users and models.
+- **Custom User Model**: Flexible user attributes and authentication (`accounts/models.py`).
 - **Django Forms**: For user registration and profile updates.
 - **Django Email Backend (Console)**: Prints verification emails to the console for development/testing.
 - **HTML Templates**: For user-facing pages (registration, profile).
+- **Branching**: The main branch is called `master`.
 
 ---
 
@@ -41,7 +42,27 @@ user_mgmt/
     settings.py
     urls.py
     wsgi.py
+images/
+    register.png
+    profile.png
+    admin.png
 ```
+
+---
+
+## Screenshots
+
+### Registration Page
+
+![Registration Page](images/register.png)
+
+### Profile Page
+
+![Profile Page](images/profile.png)
+
+### Django Admin
+
+![Django Admin](images/admin.png)
 
 ---
 
@@ -55,12 +76,12 @@ user_mgmt/
 
 ---
 
-## Setup Instructions
+## Getting Started
 
 ### 1. Clone the Repository
 
 ```sh
-git clone <your-repo-url>
+git clone -b master <your-repo-url>
 cd mma
 ```
 
@@ -104,9 +125,17 @@ python manage.py runserver
 
 ---
 
+## Demo Login
+
+You can use the following credentials to log in as a demo user:
+
+- **Username:** `mulkymma`
+- **Password:** `mulky12345`
+
+---
+
 ## Email Verification
-username:mulkymma
-password:mulky12345
+
 - After registration, a verification link is printed to the console.
 - Copy and paste the link into your browser to activate your account.
 
@@ -119,12 +148,6 @@ password:mulky12345
 - **Views**: [`accounts.views`](accounts/views.py)
 - **URLs**: [`user_mgmt.urls`](user_mgmt/urls.py), [`accounts.urls`](accounts/urls.py)
 
-
-
-## Contributing
-
-Feel free to fork this repository and submit pull requests!
-
 ---
 
 ## Troubleshooting
@@ -132,3 +155,10 @@ Feel free to fork this repository and submit pull requests!
 - Ensure you are using Python 3.x.
 - If you encounter issues with migrations, try deleting the `db.sqlite3` file and the `migrations/` folders (except `__init__.py`), then re-run migrations.
 - For email verification in production, configure Django's email backend in `settings.py`.
+
+
+
+## Contributing
+
+- The main branch is called `master`.
+- Feel free to fork this repository and submit pull requests!

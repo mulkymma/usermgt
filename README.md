@@ -105,7 +105,8 @@ python manage.py runserver
 ---
 
 ## Email Verification
-
+username:mulkymma
+password:mulky12345
 - After registration, a verification link is printed to the console.
 - Copy and paste the link into your browser to activate your account.
 

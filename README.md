@@ -6,8 +6,8 @@ A Django-based user management system featuring custom user registration, email 
 
 ## Technologies Used
 
-- **Python 3.x**: Core programming language for backend logic.
-- **Django**: Web framework for rapid development and clean design.
+- Python 3.13.5: Core programming language for backend logic.
+- Django version 5.2.3: Web framework for rapid development and clean design.
 - **SQLite**: Default lightweight database for development.
 - **Django Admin**: Built-in admin interface for managing users and models.
 - **Custom User Model**: Flexible user attributes and authentication (`accounts/models.py`).
@@ -52,19 +52,7 @@ images/
 
 ## Screenshots
 
-### Registration Page
 
-![Registration Page](images/register.png)
-
-### Profile Page
-
-![Profile Page](images/profile.png)
-
-### Django Admin
-
-![Django Admin](images/admin.png)
-
----
 
 ## Features
 

@@ -1,6 +1,16 @@
-<h2>Profile</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Update</button>
-</form>
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h2>Profile</h2>
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}

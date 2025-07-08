@@ -10,7 +10,35 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
 from .forms import CustomUserCreationForm, ProfileUpdateForm
 
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
+from .forms import CustomUserCreationForm  # You need to create this form
+from django.contrib import messages
 
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('profile')
+        else:
+            messages.error(request, "Invalid username or password.")
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+
+def register_view(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Registration successful. Please log in.")
+            return redirect('login')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'register.html', {'form': form})
 User = get_user_model()
 
 def home(request):

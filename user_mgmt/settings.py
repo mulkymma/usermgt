@@ -87,4 +87,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Email configuration for development (console backend)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'noreply@usermgmt.local'
+DEFAULT_FROM_EMAIL = 'noreply@example.com'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

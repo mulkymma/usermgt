@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block content %}
   <h2>Profile</h2>
@@ -8,9 +7,53 @@
       <div class="alert">{{ message }}</div>
     {% endfor %}
   {% endif %}
-  <form method="post">
+  {% if user.profile_picture %}
+    <div style="text-align:center;">
+      <img src="{{ user.profile_picture.url }}" alt="Profile Picture" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin-bottom:16px;">
+    </div>
+  {% endif %}
+  <form method="post" enctype="multipart/form-data" style="margin-top: 20px;">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Update</button>
   </form>
+{% endblock %}
+
+{% block extra_css %}
+  <style>
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      margin-top: 24px;
+    }
+    input, button, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0 16px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .alert {
+      background: #eaf6ea;
+      color: #256029;
+      border: 1px solid #b7e4c7;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+  </style>
 {% endblock %}
